@@ -25,12 +25,9 @@ module Api
     end
 
     def transfer
-      code = Faker::Code.npi
-      account_receiver = Account.find_by(number: params[:transfer][:to_id])
-      params[:transfer][:to_id] = account_receiver.id
+      params[:transfer][:to_id] = Account.find_by(number: params[:transfer][:to_id]).id
       transfer = Transfer.new(transfer_params)
-      transfer.transactions.build(subject: :receiver, code:, transactable: transfer.to)
-      transfer.transactions.build(subject: :sender, code:, transactable: transfer.from)
+      transfer.create_transactions
       if (transfer.from.balance >= transfer.amount) && transfer.save
         render json: transfer.as_json
       else
