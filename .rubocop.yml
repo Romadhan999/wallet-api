@@ -1,0 +1,68 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**'
+    - 'vendor/**/*'
+    - 'spec/spec_helper.rb'
+    - 'db/migrate/**'
+    - 'config/puma.rb'
+    - 'config/spring.rb'
+  NewCops: enable
+
+MethodLength:
+  Max: 300
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/LineLength:
+  Max: 125
+  Exclude:
+    - 'config/initializers/devise.rb'
+
+Metrics/AbcSize:
+  Max: 24
+  Exclude:
+    - 'spec/support/weather_watch_test_helper.rb'
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/RedundantSelf:
+    Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Lint/SymbolConversion:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Style/HashAsLastArrayItem:
+  Enabled: false
+
+Style/HashAsLastArrayItem:
+  Enabled: false
+
+Style/CollectionCompact:
+  Enabled: false
+
+Style/SingleArgumentDig:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
